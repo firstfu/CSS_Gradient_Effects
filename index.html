@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>漸層效果展示</title>
+    <style>
+      body {
+        padding: 20px;
+        background: #f0f0f0;
+        font-family: Arial, sans-serif;
+      }
+      .section {
+        margin-bottom: 30px;
+      }
+      h2 {
+        color: #333;
+        margin-bottom: 15px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid #ddd;
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+      .gradient-box {
+        width: 150px;
+        height: 100px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+      .gradient-box:hover {
+        transform: translateY(-3px);
+      }
+
+      /* 線性漸層 */
+      .linear-1 {
+        background: linear-gradient(45deg, #1e3c72, #2a5298);
+      }
+      .linear-2 {
+        background: linear-gradient(to right, #ff6b6b, #ffc0cb);
+      }
+      .linear-3 {
+        background: linear-gradient(60deg, #4facfe, #00f2fe, #4facfe);
+      }
+      .linear-4 {
+        background: linear-gradient(to bottom right, #43e97b, #38f9d7);
+      }
+      .linear-5 {
+        background: linear-gradient(135deg, #fa709a, #fee140, #fa709a);
+      }
+      .linear-6 {
+        background: linear-gradient(to left, #667eea, #764ba2, #667eea);
+      }
+
+      /* 放射狀漸層 */
+      .radial-1 {
+        background: radial-gradient(circle at center, #ff6b6b, #556270);
+      }
+      .radial-2 {
+        background: radial-gradient(ellipse at top left, #84fab0, #8fd3f4);
+      }
+      .radial-3 {
+        background: radial-gradient(circle at bottom right, #f093fb, #f5576c);
+      }
+      .radial-4 {
+        background: radial-gradient(ellipse at center, #a8edea, #fed6e3, #a8edea);
+      }
+      .radial-5 {
+        background: radial-gradient(circle at 30% 50%, #5ee7df, #b490ca);
+      }
+      .radial-6 {
+        background: radial-gradient(farthest-corner at 50% 50%, #d299c2, #fef9d7);
+      }
+
+      /* 圓錐漸層 */
+      .conic-1 {
+        background: conic-gradient(from 0deg, #fd1d1d, #833ab4, #fd1d1d);
+      }
+      .conic-2 {
+        background: conic-gradient(from 90deg, #ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000);
+      }
+      .conic-3 {
+        background: conic-gradient(from 180deg at 50% 50%, #16bffd, #cb3066, #16bffd);
+      }
+      .conic-4 {
+        background: conic-gradient(at 50% 50%, #eaafc8, #654ea3, #eaafc8);
+      }
+
+      /* 重複漸層 */
+      .repeating-1 {
+        background: repeating-linear-gradient(45deg, #606dbc, #606dbc 10px, #465298 10px, #465298 20px);
+      }
+      .repeating-2 {
+        background: repeating-radial-gradient(circle at 50% 50%, #b8cbb8 0%, #b8cbb8 5%, #c17817 5%, #c17817 10%);
+      }
+      .repeating-3 {
+        background: repeating-linear-gradient(-45deg, #ff6b6b 0px, #ff6b6b 5px, #556270 5px, #556270 10px);
+      }
+      .repeating-4 {
+        background: repeating-radial-gradient(circle at center, #43e97b, #38f9d7 20px);
+      }
+
+      /* 多重漸層 */
+      .multi-1 {
+        background: linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%),
+          linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+      }
+      .multi-2 {
+        background: radial-gradient(circle at top left, rgba(255, 0, 0, 0.5), transparent 50%),
+          radial-gradient(circle at top right, rgba(0, 0, 255, 0.5), transparent 50%), radial-gradient(circle at bottom, rgba(0, 255, 0, 0.5), transparent 50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="section">
+      <h2>線性漸層 (Linear Gradients)</h2>
+      <div class="container">
+        <div class="gradient-box linear-1"></div>
+        <div class="gradient-box linear-2"></div>
+        <div class="gradient-box linear-3"></div>
+        <div class="gradient-box linear-4"></div>
+        <div class="gradient-box linear-5"></div>
+        <div class="gradient-box linear-6"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>放射狀漸層 (Radial Gradients)</h2>
+      <div class="container">
+        <div class="gradient-box radial-1"></div>
+        <div class="gradient-box radial-2"></div>
+        <div class="gradient-box radial-3"></div>
+        <div class="gradient-box radial-4"></div>
+        <div class="gradient-box radial-5"></div>
+        <div class="gradient-box radial-6"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>圓錐漸層 (Conic Gradients)</h2>
+      <div class="container">
+        <div class="gradient-box conic-1"></div>
+        <div class="gradient-box conic-2"></div>
+        <div class="gradient-box conic-3"></div>
+        <div class="gradient-box conic-4"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>重複漸層 (Repeating Gradients)</h2>
+      <div class="container">
+        <div class="gradient-box repeating-1"></div>
+        <div class="gradient-box repeating-2"></div>
+        <div class="gradient-box repeating-3"></div>
+        <div class="gradient-box repeating-4"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>多重漸層 (Multiple Gradients)</h2>
+      <div class="container">
+        <div class="gradient-box multi-1"></div>
+        <div class="gradient-box multi-2"></div>
+      </div>
+    </div>
+  </body>
+</html>
